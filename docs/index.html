@@ -1,0 +1,512 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EYEDEAL Eyecare | Comprehensive Eye Exams in Sparta, NJ</title>
+<meta name="description" content="EYEDEAL Eyecare in Sparta, NJ offers comprehensive eye exams, pediatric eye care, dry eye treatment, and myopia management from experienced optometrists.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal-deep:#1B4B4C;
+    --teal-mid:#2E6A69;
+    --ivory:#FAF7F1;
+    --sage:#E7EFEA;
+    --amber:#C98A3E;
+    --amber-dark:#A96E2B;
+    --ink:#232620;
+    --ink-soft:#5B6259;
+    --line:#D9DED6;
+    --radius-lg:22px;
+    --radius-sm:10px;
+    --max:1180px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Inter', sans-serif;
+    color:var(--ink);
+    background:var(--ivory);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    line-height:1.1;
+    margin:0;
+    color:var(--teal-deep);
+  }
+  p{margin:0;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;}
+  :focus-visible{outline:3px solid var(--amber);outline-offset:3px;}
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(250,247,241,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 28px;max-width:var(--max);margin:0 auto;
+  }
+  .brand{display:flex;align-items:center;gap:10px;}
+  .brand-mark{
+    width:38px;height:38px;border-radius:50%;
+    background:radial-gradient(circle at 35% 35%, var(--teal-mid), var(--teal-deep) 70%);
+    position:relative;flex-shrink:0;
+  }
+  .brand-mark::after{
+    content:"";position:absolute;top:50%;left:50%;
+    width:12px;height:12px;border-radius:50%;
+    background:var(--amber);transform:translate(-50%,-50%);
+  }
+  .brand-name{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:700;color:var(--teal-deep);letter-spacing:0.3px;}
+  .brand-name span{color:var(--amber);}
+  nav ul{list-style:none;display:flex;gap:30px;margin:0;padding:0;}
+  nav ul li a{font-size:0.95rem;font-weight:500;color:var(--ink-soft);transition:color .2s;}
+  nav ul li a:hover{color:var(--teal-deep);}
+  .nav-cta{
+    background:var(--teal-deep);color:#fff;padding:10px 20px;border-radius:100px;
+    font-size:0.9rem;font-weight:600;white-space:nowrap;
+  }
+  .nav-cta:hover{background:var(--teal-mid);}
+  .menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:6px;}
+  .menu-toggle span{display:block;width:24px;height:2px;background:var(--teal-deep);margin:5px 0;transition:.25s;}
+
+  /* ---------- Hero ---------- */
+  .hero{padding:64px 0 80px;}
+  .hero .wrap{display:grid;grid-template-columns:1.05fr 0.95fr;gap:56px;align-items:center;}
+  .eyebrow-tag{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--sage);color:var(--teal-deep);
+    font-size:0.82rem;font-weight:600;padding:7px 14px;border-radius:100px;
+    margin-bottom:22px;
+  }
+  .eyebrow-tag::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--amber);}
+  .hero h1{font-size:clamp(2.3rem, 3.6vw, 3.4rem);letter-spacing:-0.01em;}
+  .hero p.lead{
+    margin-top:20px;font-size:1.08rem;color:var(--ink-soft);max-width:46ch;
+  }
+  .hero-actions{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap;}
+  .btn-primary{
+    background:var(--amber);color:#fff;padding:14px 26px;border-radius:100px;
+    font-weight:600;font-size:0.98rem;transition:background .2s, transform .2s;
+    display:inline-block;
+  }
+  .btn-primary:hover{background:var(--amber-dark);transform:translateY(-1px);}
+  .btn-secondary{
+    border:1.5px solid var(--teal-deep);color:var(--teal-deep);padding:13px 25px;
+    border-radius:100px;font-weight:600;font-size:0.98rem;transition:background .2s;
+  }
+  .btn-secondary:hover{background:var(--sage);}
+  .hero-stats{display:flex;gap:34px;margin-top:40px;flex-wrap:wrap;}
+  .hero-stats div strong{display:block;font-family:'Fraunces',serif;font-size:1.6rem;color:var(--teal-deep);}
+  .hero-stats div span{font-size:0.85rem;color:var(--ink-soft);}
+
+  .hero-visual{position:relative;}
+  .hero-visual .frame{
+    border-radius:var(--radius-lg);overflow:hidden;
+    box-shadow:0 24px 48px -20px rgba(27,75,76,0.35);
+    aspect-ratio:4/5;
+  }
+  .hero-visual .frame img{width:100%;height:100%;object-fit:cover;}
+  .floating-card{
+    position:absolute;bottom:-26px;left:-26px;
+    background:#fff;border-radius:var(--radius-sm);padding:16px 20px;
+    box-shadow:0 16px 32px -12px rgba(35,38,32,0.2);
+    display:flex;align-items:center;gap:12px;max-width:230px;
+  }
+  .floating-card .dot{
+    width:40px;height:40px;border-radius:50%;background:var(--sage);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .floating-card .dot svg{width:20px;height:20px;stroke:var(--teal-deep);}
+  .floating-card strong{display:block;font-size:0.9rem;color:var(--ink);}
+  .floating-card span{font-size:0.78rem;color:var(--ink-soft);}
+
+  /* ---------- Section shared ---------- */
+  section{padding:88px 0;}
+  .section-head{max-width:640px;margin-bottom:48px;}
+  .section-head .eyebrow-tag{margin-bottom:16px;}
+  .section-head h2{font-size:clamp(1.8rem,2.6vw,2.5rem);}
+  .section-head p{margin-top:16px;color:var(--ink-soft);font-size:1.03rem;}
+
+  /* ---------- Services ---------- */
+  .services{background:var(--sage);}
+  .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .service-card{
+    background:#fff;border-radius:var(--radius-sm);padding:32px 28px;
+    border:1px solid var(--line);transition:transform .25s, box-shadow .25s;
+  }
+  .service-card:hover{transform:translateY(-4px);box-shadow:0 20px 32px -18px rgba(27,75,76,0.28);}
+  .service-card.featured{
+    background:var(--teal-deep);border-color:var(--teal-deep);grid-column:span 2;
+    display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;
+  }
+  .service-card.featured h3, .service-card.featured p{color:#fff;}
+  .service-card.featured .badge{
+    background:var(--amber);color:#fff;font-size:0.75rem;font-weight:700;
+    padding:5px 12px;border-radius:100px;display:inline-block;margin-bottom:14px;
+  }
+  .service-icon{
+    width:46px;height:46px;border-radius:12px;background:var(--sage);
+    display:flex;align-items:center;justify-content:center;margin-bottom:18px;
+  }
+  .service-icon svg{width:24px;height:24px;stroke:var(--teal-deep);}
+  .service-card h3{font-size:1.2rem;margin-bottom:10px;}
+  .service-card p{color:var(--ink-soft);font-size:0.95rem;}
+  .featured-visual{
+    width:150px;height:150px;border-radius:16px;overflow:hidden;flex-shrink:0;
+  }
+  .featured-visual img{width:100%;height:100%;object-fit:cover;}
+
+  /* ---------- Why choose ---------- */
+  .why .wrap{display:grid;grid-template-columns:0.9fr 1.1fr;gap:56px;align-items:start;}
+  .why-image{border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:1/1;position:sticky;top:100px;}
+  .why-image img{width:100%;height:100%;object-fit:cover;}
+  .why-list{display:flex;flex-direction:column;}
+  .why-item{
+    display:grid;grid-template-columns:44px 1fr;gap:18px;
+    padding:24px 0;border-bottom:1px solid var(--line);
+  }
+  .why-item:first-child{padding-top:0;}
+  .why-item .num{
+    font-family:'Fraunces',serif;font-size:1rem;color:var(--amber);font-weight:600;
+  }
+  .why-item h3{font-size:1.1rem;margin-bottom:6px;}
+  .why-item p{color:var(--ink-soft);font-size:0.95rem;}
+
+  /* ---------- FAQ ---------- */
+  .faq{background:var(--sage);}
+  .faq-list{max-width:800px;}
+  .faq-item{
+    background:#fff;border-radius:var(--radius-sm);border:1px solid var(--line);
+    margin-bottom:14px;overflow:hidden;
+  }
+  .faq-item summary{
+    padding:22px 26px;font-weight:600;font-size:1.02rem;cursor:pointer;
+    display:flex;justify-content:space-between;align-items:center;list-style:none;
+    color:var(--teal-deep);
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{
+    content:"+";font-size:1.4rem;color:var(--amber);font-weight:400;flex-shrink:0;margin-left:16px;
+    transition:transform .2s;
+  }
+  .faq-item[open] summary::after{transform:rotate(45deg);}
+  .faq-item .faq-body{padding:0 26px 24px;color:var(--ink-soft);font-size:0.97rem;max-width:65ch;}
+
+  /* ---------- Contact ---------- */
+  .contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
+  .contact-card{
+    background:var(--teal-deep);border-radius:var(--radius-lg);padding:44px 40px;color:#fff;
+  }
+  .contact-card h2{color:#fff;font-size:1.9rem;margin-bottom:10px;}
+  .contact-card p.sub{color:#CFE3DF;margin-bottom:32px;font-size:0.98rem;}
+  .contact-row{display:flex;gap:16px;padding:18px 0;border-top:1px solid rgba(255,255,255,0.15);}
+  .contact-row:first-of-type{border-top:none;padding-top:0;}
+  .contact-row .icon{
+    width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,0.12);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .contact-row .icon svg{width:19px;height:19px;stroke:var(--amber);}
+  .contact-row strong{display:block;font-size:0.85rem;color:#CFE3DF;font-weight:500;margin-bottom:2px;}
+  .contact-row a, .contact-row span.val{font-size:1rem;font-weight:600;}
+  .contact-row a:hover{color:var(--amber);}
+  .contact-cta{
+    margin-top:32px;display:inline-block;background:var(--amber);color:#fff;
+    padding:14px 26px;border-radius:100px;font-weight:600;
+  }
+  .contact-cta:hover{background:var(--amber-dark);}
+  .map-frame{border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--line);min-height:420px;}
+  .map-frame iframe{width:100%;height:100%;min-height:420px;border:0;}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--teal-deep);color:#CFE3DF;padding:36px 0;}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;}
+  footer .foot-brand{display:flex;align-items:center;gap:10px;color:#fff;font-family:'Fraunces',serif;font-weight:600;}
+  footer small{font-size:0.85rem;}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:920px){
+    nav ul{display:none;}
+    .menu-toggle{display:block;}
+    .hero .wrap{grid-template-columns:1fr;}
+    .hero-visual{order:-1;max-width:420px;margin:0 auto;}
+    .why .wrap{grid-template-columns:1fr;}
+    .why-image{position:static;aspect-ratio:16/10;}
+    .service-grid{grid-template-columns:1fr 1fr;}
+    .service-card.featured{grid-column:span 2;}
+    .contact .wrap{grid-template-columns:1fr;}
+  }
+  @media (max-width:600px){
+    .wrap{padding:0 20px;}
+    section{padding:64px 0;}
+    .service-grid{grid-template-columns:1fr;}
+    .service-card.featured{grid-column:span 1;grid-template-columns:1fr;text-align:left;}
+    .featured-visual{width:100%;height:160px;}
+    .hero-stats{gap:24px;}
+    .contact-card{padding:32px 26px;}
+    .floating-card{left:0;bottom:-20px;max-width:200px;padding:12px 16px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="#top" aria-label="EYEDEAL Eyecare home">
+      <span class="brand-name">EYEDEAL <span>Eyecare</span></span>
+    </a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#why">Why Us</a></li>
+        <li><a href="#faq">FAQs</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="nav-cta" href="tel:9736042020">Call 973-604-2020</a>
+    <button class="menu-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow-tag">Sparta, New Jersey</span>
+        <h1>Clear vision starts with a comprehensive eye exam.</h1>
+        <p class="lead">EYEDEAL Eyecare is a family optometry practice in Sparta, NJ, offering thorough comprehensive eye exams, pediatric care, dry eye treatment, and myopia management — all under one roof.</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="tel:9736042020">Book an Eye Exam</a>
+          <a class="btn-secondary" href="#services">View Our Services</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>20/20</strong><span>Focused, thorough exams</span></div>
+          <div><strong>All Ages</strong><span>Pediatric to adult care</span></div>
+          <div><strong>Local</strong><span>Proudly serving Sparta, NJ</span></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="frame">
+          <img src="https://img.magnific.com/premium-photo/eye-care-specialist-performing-comprehensive-eye-exam-female-patient-stateoftheart-ophthalmology_1359741-14599.jpg?ga=GA1.1.461954604.1789191160&semt=ais_hybrid&w=740&q=80" alt="Optometrist performing a comprehensive eye exam on a patient at EYEDEAL Eyecare">
+        </div>
+        <div class="floating-card">
+          <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg></span>
+          <div>
+            <strong>Comprehensive Eye Exam</strong>
+            <span>Our most requested service</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow-tag">Our Services</span>
+        <h2>Eye care built around every stage of vision.</h2>
+        <p>From a child's first exam to managing dry eye and myopia over time, our optometrists tailor every visit to your eyes and your life.</p>
+      </div>
+
+      <div class="service-grid">
+
+        <div class="service-card featured">
+          <div>
+            <span class="badge">Most Popular</span>
+            <h3>Comprehensive Eye Exam</h3>
+            <p>A full evaluation of your vision and eye health — refraction, eye pressure, and a detailed retinal check — so nothing gets missed and small issues are caught early.</p>
+          </div>
+          <div class="featured-visual">
+            <img src="https://img.magnific.com/premium-photo/male-ophthalmologist-performing-ophthalmoscope-exam-retinal-insight_1319323-1187.jpg?ga=GA1.1.461954604.1789191160" alt="Ophthalmoscope retinal exam at EYEDEAL Eyecare">
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <h3>Pediatric Eye Exam</h3>
+          <p>Gentle, patient exams designed for kids, catching vision problems early so they can read, learn, and play without strain.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C9 6 5 10.5 5 14a7 7 0 0 0 14 0c0-3.5-4-8-7-12z"/></svg></div>
+          <h3>Dry Eye Treatment</h3>
+          <p>Relief from grittiness, burning, and fluctuating vision with a treatment plan matched to what's actually causing your dry eye.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5m0 14h16M4 15l4-4 4 3 8-8"/></svg></div>
+          <h3>Myopia Management</h3>
+          <p>Proactive strategies to help slow the progression of nearsightedness in children and teens, protecting long-term eye health.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M9 9h.01M15 9h.01M9 15h6"/></svg></div>
+          <h3>General Optometry Care</h3>
+          <p>Contact lens fittings, glasses prescriptions, and ongoing eye health monitoring from a team that gets to know your history.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE -->
+  <section class="why" id="why">
+    <div class="wrap">
+      <div class="why-image">
+        <img src="https://img.magnific.com/premium-photo/male-ophthalmologist-performing-ophthalmoscope-exam-retinal-insight_1319323-1187.jpg?ga=GA1.1.461954604.1789191160" alt="Eye doctor examining a patient at EYEDEAL Eyecare in Sparta, NJ">
+      </div>
+      <div>
+        <div class="section-head" style="margin-bottom:8px;">
+          <span class="eyebrow-tag">Why Choose Us</span>
+          <h2>Why Choose EYEDEAL Eyecare?</h2>
+        </div>
+
+        <div class="why-list">
+          <div class="why-item">
+            <span class="num">01</span>
+            <div>
+              <h3>Genuinely thorough exams</h3>
+              <p>We take the time to check vision and eye health properly, not rush through a checklist. Every comprehensive eye exam looks beyond glasses prescriptions to your long-term eye health.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <span class="num">02</span>
+            <div>
+              <h3>Care for the whole family</h3>
+              <p>From a child's first pediatric eye exam to routine adult vision care, we treat patients of every age in one comfortable, familiar office.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <span class="num">03</span>
+            <div>
+              <h3>Specialized dry eye and myopia care</h3>
+              <p>Beyond routine exams, our optometrists offer focused treatment for dry eye and myopia management — conditions that need more than a standard checkup.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <span class="num">04</span>
+            <div>
+              <h3>A trusted local eye doctor</h3>
+              <p>Conveniently located in Sparta, NJ, EYEDEAL Eyecare is the neighborhood optometrist patients recommend to their own families.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow-tag">Common Questions</span>
+        <h2>Frequently asked questions</h2>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary>What happens during a comprehensive eye exam?</summary>
+          <div class="faq-body">A comprehensive eye exam at EYEDEAL Eyecare covers a vision and refraction check, eye pressure testing, and a detailed look at the retina and overall eye health. It's designed to catch both vision changes and early signs of eye disease.</div>
+        </details>
+        <details class="faq-item">
+          <summary>At what age should my child have their first eye exam?</summary>
+          <div class="faq-body">Most children benefit from their first pediatric eye exam before starting school, though we welcome younger children too. Early exams help catch vision issues that can affect learning before they become harder to correct.</div>
+        </details>
+        <details class="faq-item">
+          <summary>How do I know if I have dry eye, and can it be treated?</summary>
+          <div class="faq-body">Symptoms like grittiness, burning, redness, or blurry vision that comes and goes are common signs of dry eye. During your visit, we identify the underlying cause and build a dry eye treatment plan suited to your specific symptoms.</div>
+        </details>
+        <details class="faq-item">
+          <summary>What is myopia management, and is it right for my child?</summary>
+          <div class="faq-body">Myopia management uses proven methods to help slow the progression of nearsightedness in children and teens. If your child's prescription keeps increasing, it's worth discussing myopia management options at their next exam.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Do I need an appointment, or do you accept walk-ins?</summary>
+          <div class="faq-body">We recommend scheduling ahead so we can give your comprehensive eye exam or consultation the full time it deserves. Call us at 973-604-2020 and our team will find a time that works for you.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="contact-card">
+        <h2>Contact Information</h2>
+        <p class="sub">Reach out to schedule your comprehensive eye exam or ask our team a question.</p>
+
+        <div class="contact-row">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <div>
+            <strong>Address</strong>
+            <span class="val">328B S Sparta Ave, Suite B, Sparta, NJ 07871</span>
+          </div>
+        </div>
+        <div class="contact-row">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6.3 6.3l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z"/></svg></span>
+          <div>
+            <strong>Phone</strong>
+            <a href="tel:9736042020">973-604-2020</a>
+          </div>
+        </div>
+        <div class="contact-row">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg></span>
+          <div>
+            <strong>Website</strong>
+            <a href="http://www.eyedealeyecarenj.com/" target="_blank" rel="noopener">www.eyedealeyecarenj.com</a>
+          </div>
+        </div>
+
+        <a class="contact-cta" href="tel:9736042020">Call 973-604-2020</a>
+      </div>
+
+      <div class="map-frame">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3440.6078496825658!2d-74.6679228!3d41.03505199999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c3736091ba7573%3A0xe1b30b173a8b5b3a!2sEYEDEAL%20EYECARE!5e1!3m2!1sen!2s!4v1789194174611!5m2!1sen!2s" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title="EYEDEAL Eyecare location map"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">
+      EYEDEAL Eyecare
+    </div>
+    <small>&copy; 2026 EYEDEAL Eyecare, Sparta, NJ. All rights reserved.</small>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  const toggle = document.querySelector('.menu-toggle');
+  const navList = document.querySelector('nav ul');
+  toggle.addEventListener('click', () => {
+    const open = navList.style.display === 'flex';
+    navList.style.display = open ? 'none' : 'flex';
+    navList.style.cssText += 'flex-direction:column;position:absolute;top:64px;left:0;right:0;background:#FAF7F1;padding:20px 28px;gap:16px;border-bottom:1px solid #D9DED6;';
+    if (open) navList.style.display = 'none';
+  });
+  document.querySelectorAll('nav ul li a').forEach(a=>{
+    a.addEventListener('click', ()=>{ if(window.innerWidth<=920){ navList.style.display='none'; } });
+  });
+</script>
+
+</body>
+</html>
